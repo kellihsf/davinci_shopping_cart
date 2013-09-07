@@ -1,5 +1,4 @@
 require 'spec_helper'
-
 feature "Products Management" do
   scenario "User creates a new product" do
     visit "/products/new"
@@ -49,7 +48,7 @@ feature "Products Management" do
   end
 
   scenario "User deletes a product" do
-    product  = FactoryGirl.create(:product)
+    product = FactoryGirl.create(:product)
     product2 = FactoryGirl.create(:product)
 
     visit "/products"

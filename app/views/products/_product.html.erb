@@ -1,0 +1,6 @@
+<tr class='<%= cycle("odd", "") %>'>
+  <td><%= product.name %></td>
+  <td><%= product.description %></td>
+  <td><%= image_tag(product.image_url) %></td>
+  <td><%= number_to_currency(product.price) %></td>
+</tr>

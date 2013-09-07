@@ -1,0 +1,25 @@
+<h1>Welcome to our Online Store</h1>
+
+<table class ="products">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Picture</th>
+    <th>Price</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <%= render @products %>
+  <% if false %>
+  # @products.each do |product|
+  # render :partial => "products/product", :product => product
+  # end
+      <% end %>
+  </tbody>
+
+</table>
+
+
+<%= will_paginate @products %>
