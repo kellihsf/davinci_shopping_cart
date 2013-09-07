@@ -27,7 +27,7 @@ feature "Products Management" do
     visit "/products/#{product.id} "
     expect(page).to have_content(product.name)
     expect(page).to have_content(product.description)
-    expect(page).to have_content(product.image_url)
+    expect(page).to have_selector("img[src$='#{product.image_url}']")
     expect(page).to have_content(product.price)
   end
 
@@ -39,12 +39,12 @@ feature "Products Management" do
 
     expect(page).to have_content(product.name)
     expect(page).to have_content(product.description)
-    expect(page).to have_content(product.image_url)
+    expect(page).to have_selector("img[src$='#{product.image_url}']")
     expect(page).to have_content(product.price)
 
     expect(page).to have_content(product2.name)
     expect(page).to have_content(product2.description)
-    expect(page).to have_content(product2.image_url)
+    expect(page).to have_selector("img[src$='#{product.image_url}']")
     expect(page).to have_content(product2.price)
   end
 
@@ -57,12 +57,12 @@ feature "Products Management" do
 
     expect(page).to have_content(product.name)
     expect(page).to have_content(product.description)
-    expect(page).to have_content(product.image_url)
+    expect(page).to have_selector("img[src$='#{product.image_url}']")
     expect(page).to have_content(product.price)
 
     expect(page).to_not have_content(product2.name)
     expect(page).to_not have_content(product2.description)
-    expect(page).to_not have_content(product2.image_url)
+    expect(page).to_not have_content("img[src$='#{product2.image_url}']")
     expect(page).to_not have_content(product2.price)
   end
 end
